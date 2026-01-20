@@ -2157,3 +2157,7 @@ html {
     -webkit-backface-visibility: hidden;
 }
 
+.cursor,
+.cursor-dot {
+  pointer-events: none;
+}

@@ -355,13 +355,16 @@ function openProjectModal(projectId) {
     `).join('');
     
     // Live Link
-    const primaryBtn = document.getElementById('modalPrimaryBtn');
+  // Live Link
+const primaryBtn = document.getElementById('modalPrimaryBtn');
+if (project.liveLink === '#') {
+    primaryBtn.style.display = 'none';
+    primaryBtn.href = '#';
+} else {
+    primaryBtn.style.display = 'inline-flex';
     primaryBtn.href = project.liveLink;
-    if (project.liveLink === '#') {
-        primaryBtn.style.display = 'none';
-    } else {
-        primaryBtn.style.display = 'inline-flex';
-    }
+    primaryBtn.setAttribute('href', project.liveLink);
+}
     
     // Show modal
     modal.classList.add('active');
